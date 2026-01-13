@@ -1,0 +1,45 @@
+name: Deploy yagoda-coffee to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # -------------------------------
+      # Upload project files to server
+      # -------------------------------
+      - name: Upload files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: "./"
+          target: "${{ secrets.APP_DIR }}"
+          overwrite: true
+          rm: false
+
+      # -------------------------------
+      # Run commands on server
+      # (пока заглушка, код добавишь позже)
+      # -------------------------------
+      - name: Execute commands on server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd ${{ secrets.APP_DIR }}
+            echo "Deploy completed for yagoda-coffee"
+
