@@ -105,6 +105,9 @@ button {
   border-radius: 999px;
   font-size: 0.9rem;
   color: #3b3a36;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .nav__link:hover {
@@ -116,6 +119,11 @@ button {
   flex-direction: column;
   padding: 0.5rem 0 1rem;
   border-top: 1px solid #ece7e2;
+  gap: 0.5rem;
+}
+
+.nav__link--mobile {
+  text-align: left;
 }
 
 .header__actions {
@@ -162,7 +170,7 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
-  align-items: center;
+  align-items: start;
 }
 
 .hero__info h1 {
@@ -197,15 +205,6 @@ button {
   gap: 0.75rem;
 }
 
-.mini-card {
-  padding: 0.8rem;
-  background: #fff;
-  border-radius: 1rem;
-  border: 1px solid #ece7e2;
-  display: grid;
-  gap: 0.3rem;
-}
-
 .section {
   padding: 3rem 0;
 }
@@ -215,6 +214,14 @@ button {
   margin-bottom: 1.5rem;
 }
 
+.section__cta {
+  margin-top: 1.5rem;
+}
+
+.section__grid {
+  margin-top: 1.5rem;
+}
+
 .eyebrow {
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -222,11 +229,19 @@ button {
   color: #a06a4f;
 }
 
-.tag-row {
+.pill-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #e5ded6;
+  background: #fff;
+  font-size: 0.8rem;
 }
 
 .tag {
@@ -281,23 +296,6 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.formats {
-  margin-bottom: 1.5rem;
-}
-
-.formats__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.format-card {
-  background: #fdfbf9;
-  border-radius: 1rem;
-  padding: 1rem;
-  border: 1px solid #ece7e2;
-}
-
 .package ul,
 .card ul {
   padding-left: 1.1rem;
@@ -311,31 +309,6 @@ button {
   box-shadow: 0 12px 32px rgba(122, 78, 55, 0.12);
 }
 
-.timeline {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.timeline li {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.75rem;
-  align-items: flex-start;
-}
-
-.timeline__index {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  border: 1px solid #e5ded6;
-  display: grid;
-  place-items: center;
-  font-size: 0.8rem;
-}
-
 .faq {
   display: grid;
   gap: 1rem;
@@ -347,26 +320,22 @@ button {
   padding: 1rem;
 }
 
-.menu-list {
-  display: grid;
-  gap: 0.5rem;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
 .contact-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.info-block {
+.note-grid {
   display: grid;
-  gap: 0.3rem;
+  gap: 0.75rem;
+}
+
+.note-card {
+  border-radius: 1rem;
+  border: 1px solid #ece7e2;
+  padding: 1rem;
+  background: #fdfbf9;
 }
 
 .form-grid {
@@ -374,11 +343,10 @@ button {
   gap: 0.8rem;
 }
 
-.form-grid label {
+.form-grid__row {
   display: grid;
-  gap: 0.4rem;
-  font-size: 0.9rem;
-  color: #3b3a36;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
 }
 
 .form-grid input,
@@ -408,6 +376,10 @@ button {
   margin-top: auto;
 }
 
+.footer--section {
+  margin-top: 2rem;
+}
+
 .footer__content {
   display: flex;
   flex-wrap: wrap;
@@ -421,6 +393,15 @@ button {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.mini-card {
+  padding: 0.8rem;
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid #ece7e2;
+  display: grid;
+  gap: 0.3rem;
 }
 
 .modal {

@@ -1,4 +1,4 @@
-# yagoda-coffee.
+# yagoda-coffee
 Сайт кофейни «Ягода».
 
 ## Запуск
