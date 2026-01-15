@@ -140,7 +140,7 @@ export default function App() {
             <span className="logo__mark">☕</span>
             <span className="logo__text">
               <span className="logo__name">{BRAND.name}</span>
-              <span className="logo__meta">{BRAND.city}</span>
+              <span className="logo__meta">твоя кофейня · {BRAND.city}</span>
             </span>
           </a>
 

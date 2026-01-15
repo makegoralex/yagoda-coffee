@@ -1,10 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600&display=swap");
+
 :root {
   color-scheme: light;
-  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
+  font-family: "Jura", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
   font-weight: 400;
-  color: #1d1d1f;
-  background-color: #faf9f7;
+  color: #2a3132;
+  background-color: #f7f5f2;
+  --brand-black: #000000;
+  --brand-dark: #2a3132;
+  --brand-accent: #1aa57d;
+  --brand-accent-strong: #0f8c68;
+  --brand-warm: #ffcd2c;
+  --brand-red: #ffc42e;
+  --surface: #ffffff;
+  --surface-muted: #f2eeea;
+  --border: #e7e2db;
+  --shadow: 0 12px 32px rgba(42, 49, 50, 0.12);
 }
 
 *,
@@ -15,7 +27,8 @@
 
 body {
   margin: 0;
-  background-color: #faf9f7;
+  background-color: var(--surface-muted);
+  color: var(--brand-dark);
 }
 
 a {
@@ -48,9 +61,9 @@ button {
 .header {
   position: sticky;
   top: 0;
-  background: rgba(250, 249, 247, 0.9);
+  background: rgba(247, 245, 242, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #ece7e2;
+  border-bottom: 1px solid var(--border);
   z-index: 20;
 }
 
@@ -72,10 +85,11 @@ button {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.9rem;
-  border: 1px solid #e5ded6;
+  border: 1px solid var(--border);
   display: grid;
   place-items: center;
-  background: #fff;
+  background: var(--surface);
+  box-shadow: 0 6px 20px rgba(26, 165, 125, 0.18);
 }
 
 .logo__text {
@@ -87,11 +101,16 @@ button {
 .logo__name {
   font-weight: 600;
   font-size: 1rem;
+  color: var(--brand-black);
+  letter-spacing: 0.02em;
 }
 
 .logo__meta {
-  font-size: 0.8rem;
-  color: #6c6b67;
+  font-size: 0.78rem;
+  color: var(--brand-dark);
+  opacity: 0.75;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .nav {
@@ -104,14 +123,14 @@ button {
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
   font-size: 0.9rem;
-  color: #3b3a36;
+  color: var(--brand-dark);
   border: none;
   background: transparent;
   cursor: pointer;
 }
 
 .nav__link:hover {
-  background: #f0ebe4;
+  background: rgba(26, 165, 125, 0.08);
 }
 
 .nav--mobile {
@@ -134,8 +153,8 @@ button {
 
 .menu-toggle {
   display: none;
-  border: 1px solid #e5ded6;
-  background: #fff;
+  border: 1px solid var(--border);
+  background: var(--surface);
   padding: 0.5rem 0.75rem;
   border-radius: 0.8rem;
 }
@@ -145,25 +164,27 @@ button {
   border-radius: 999px;
   padding: 0.7rem 1.4rem;
   cursor: pointer;
-  background: #1d1d1f;
+  background: var(--brand-black);
   color: #fff;
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .button--ghost {
-  background: #f0ebe4;
-  color: #1d1d1f;
+  background: rgba(26, 165, 125, 0.08);
+  color: var(--brand-dark);
 }
 
 .button--accent {
-  background: #7a4e37;
+  background: var(--brand-accent);
   color: #fff;
+  box-shadow: 0 10px 20px rgba(26, 165, 125, 0.25);
 }
 
 .hero {
   padding: 3rem 0 2.5rem;
-  background: radial-gradient(circle at top right, #efe8e2, transparent 50%),
-    radial-gradient(circle at bottom left, #efe8e2, transparent 45%);
+  background: radial-gradient(circle at top right, rgba(26, 165, 125, 0.12), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(255, 205, 44, 0.2), transparent 50%);
 }
 
 .hero__content {
@@ -189,8 +210,9 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  color: #6c6b67;
+  color: var(--brand-dark);
   font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 .hero__card {
@@ -226,7 +248,7 @@ button {
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
-  color: #a06a4f;
+  color: var(--brand-accent);
 }
 
 .pill-row {
@@ -239,8 +261,8 @@ button {
 .pill {
   border-radius: 999px;
   padding: 0.35rem 0.8rem;
-  border: 1px solid #e5ded6;
-  background: #fff;
+  border: 1px solid rgba(26, 165, 125, 0.2);
+  background: rgba(255, 255, 255, 0.7);
   font-size: 0.8rem;
 }
 
@@ -258,16 +280,17 @@ button {
 
 .card {
   background: #fff;
-  border: 1px solid #ece7e2;
+  border: 1px solid var(--border);
   border-radius: 1.5rem;
   padding: 1.5rem;
   display: grid;
   gap: 1rem;
+  box-shadow: 0 8px 24px rgba(42, 49, 50, 0.06);
 }
 
 .card--note {
   margin-top: 1.5rem;
-  background: #fdfbf9;
+  background: #f9f6f2;
 }
 
 .card__actions {
@@ -305,8 +328,8 @@ button {
 }
 
 .package--highlight {
-  border-color: #7a4e37;
-  box-shadow: 0 12px 32px rgba(122, 78, 55, 0.12);
+  border-color: rgba(26, 165, 125, 0.45);
+  box-shadow: var(--shadow);
 }
 
 .faq {
@@ -316,7 +339,7 @@ button {
 
 .faq__item {
   border-radius: 1rem;
-  border: 1px solid #ece7e2;
+  border: 1px solid var(--border);
   padding: 1rem;
 }
 
@@ -333,9 +356,9 @@ button {
 
 .note-card {
   border-radius: 1rem;
-  border: 1px solid #ece7e2;
+  border: 1px solid var(--border);
   padding: 1rem;
-  background: #fdfbf9;
+  background: #f9f6f2;
 }
 
 .form-grid {
@@ -352,7 +375,7 @@ button {
 .form-grid input,
 .form-grid textarea {
   border-radius: 0.8rem;
-  border: 1px solid #e5ded6;
+  border: 1px solid var(--border);
   padding: 0.65rem 0.8rem;
   background: #fff;
 }
@@ -363,7 +386,8 @@ button {
 }
 
 .text-muted {
-  color: #6c6b67;
+  color: var(--brand-dark);
+  opacity: 0.7;
 }
 
 .small {
@@ -372,7 +396,7 @@ button {
 
 .footer {
   padding: 2rem 0 3rem;
-  border-top: 1px solid #ece7e2;
+  border-top: 1px solid var(--border);
   margin-top: auto;
 }
 
@@ -385,8 +409,9 @@ button {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
-  color: #6c6b67;
+  color: var(--brand-dark);
   font-size: 0.9rem;
+  opacity: 0.75;
 }
 
 .footer__links {
@@ -399,7 +424,7 @@ button {
   padding: 0.8rem;
   background: #fff;
   border-radius: 1rem;
-  border: 1px solid #ece7e2;
+  border: 1px solid var(--border);
   display: grid;
   gap: 0.3rem;
 }
@@ -425,7 +450,8 @@ button {
   padding: 2rem;
   width: min(520px, 90vw);
   z-index: 2;
-  border: 1px solid #ece7e2;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 .modal__actions {
