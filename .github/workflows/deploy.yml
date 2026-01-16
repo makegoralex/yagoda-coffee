@@ -41,5 +41,6 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd ${{ secrets.APP_DIR }}
+            npm ci
+            npm run build
             echo "Deploy completed for yagoda-coffee"
-
